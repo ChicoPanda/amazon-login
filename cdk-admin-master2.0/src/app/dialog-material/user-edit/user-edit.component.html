@@ -1,0 +1,20 @@
+ <form [formGroup]="form" (ngSubmit)="submit(form)">
+    <h1 mat-dialog-title>Editar Usuario</h1>
+
+    <mat-dialog-content>
+      <mat-form-field>
+        <input matInput formControlName="firstname_input"  [(ngModel)]="selectUser.firstname" [value]="selectUser.firstname" required>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder="Choose Rol New" [(ngModel)]="selectUser.rol.name"  formControlName="rol_select" required >
+            <mat-option *ngFor="let authority of authorities" [value]="authority.id">
+              {{authority.name | slice:5}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button type="submit">Edit</button>
+      <button mat-button type="button" (click)="dialogRef.close()">Cancel</button>
+    </mat-dialog-actions>
+  </form>

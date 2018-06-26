@@ -1,0 +1,61 @@
+<div class="content1">
+  <div fxLayout="row" fxLayoutAlign="center" id=mat-caard>
+
+    <mat-card id=cajaizq elevation="5" style=background-color:dimgray>
+
+      <div class="demo-frame">
+        <div class="demo-container">
+
+          <video id="video" width="320" height="240" preload autoplay loop muted></video>
+          <canvas id="canvas" width="300" height="240"></canvas>
+        </div>
+      </div>
+
+    </mat-card>
+
+    <mat-card id=cajader elevation="5" fxFlex style=background-color:white>
+      <mat-card-content>
+        <h3>ACME 2.0</h3>
+        <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <mat-input-container>
+            <input matInput formControlName="password" required type="password" placeholder="Contraseña (123)">
+          </mat-input-container>
+          <p>
+            <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login
+              <i class="material-icons orange600">exit_to_app</i>
+              
+            </button>
+          </p>
+        
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+  <footer id="footerplus">
+
+    <div class="footer-copyright text-center py-3" align="center">
+      <div class="container-fluid">
+         2018 Proyecto Formativo:
+         
+      </div>
+    </div>
+
+  </footer>
+
+
+  <canvas class="noVisible" #canvas id="canvas" width="640" height="480"></canvas>
+  <div id="spinner">
+    <div id="floatingCirclesG">
+      <div class="f_circleG" id="frotateG_01"></div>
+      <div class="f_circleG" id="frotateG_02"></div>
+      <div class="f_circleG" id="frotateG_03"></div>
+      <div class="f_circleG" id="frotateG_04"></div>
+      <div class="f_circleG" id="frotateG_05"></div>
+      <div class="f_circleG" id="frotateG_06"></div>
+      <div class="f_circleG" id="frotateG_07"></div>
+      <div class="f_circleG" id="frotateG_08"></div>
+    </div>
+  </div>
+</div>

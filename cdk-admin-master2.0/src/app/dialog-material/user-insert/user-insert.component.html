@@ -1,0 +1,30 @@
+ <form #userForm="ngForm" [formGroup]="form" (ngSubmit)="submit(form)">
+    <h1 mat-dialog-title>Insertar Usuario</h1>
+
+    <mat-dialog-content>
+      <mat-form-field>
+        <input matInput formControlName="firstname_input" placeholder="Enter your firstname"[value]="selectUser.firstname"  [(ngModel)]="selectUser.firstname" required>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput formControlName="password_input" placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput formControlName="password_input1" placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required>
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field>  
+      <mat-form-field>
+        <mat-select placeholder="Choose Rol New" formControlName="rol_select" required [(ngModel)]="selectedAuthority" required>
+          <mat-option *ngFor="let authority of authorities" [value]="authority.id">
+            {{authority.name | slice:5}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+        <input type="file" accept="image/*" formControlName="username_input" class="form-control" id="username" required name="username"
+        (change)="onFileChange($event)" #fileInput required>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button type="submit" [disabled]="!userForm.form.valid" >Add</button>
+      <button mat-button type="button" (click)="dialogRef.close()">Cancel</button>
+    </mat-dialog-actions>
+  </form>

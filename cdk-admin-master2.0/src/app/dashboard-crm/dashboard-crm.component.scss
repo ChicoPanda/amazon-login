@@ -1,0 +1,24 @@
+mat-card {
+  padding: 5px;
+  margin: 5px;
+}
+.hola{
+  background-image: url(w.jpg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover
+ 
+}
+.saludo{
+  background: rgba(73, 153, 161, 0.4);
+  border-radius: 107px 107px 107px 107px;
+-moz-border-radius: 107px 107px 107px 107px;
+-webkit-border-radius: 107px 107px 107px 107px;
+border: 0px solid #000000;
+ 
+}
+p{text-align: center;
+padding:5%}
